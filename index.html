@@ -3,39 +3,343 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Static Page</title>
+    <title>Stephanie Zhang - Resume Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --text-color: #2d3748;
+            --bg-color: #f7fafc;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+            display: flex;
+        }
+
+        /* Sidebar Styling */
+        aside {
+            width: var(--sidebar-width);
+            background-color: var(--primary-color);
+            color: white;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            padding: 2rem 1.5rem;
+            overflow-y: auto;
+        }
+
+        .profile h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info {
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            word-wrap: break-word;
+        }
+
+        .contact-info a {
+            color: #63b3ed;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Main Content Styling */
+        main {
+            margin-left: var(--sidebar-width);
+            padding: 3rem;
+            max-width: 1000px;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 2rem;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .sub-heading {
+            font-style: italic;
+            color: #718096;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .objective-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .item-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .item-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .competency-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .competency-card p {
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding: 1.5rem;
+            }
+            main {
+                margin-left: 0;
+                width: 100%;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Welcome</h1>
-    <p>Resume</p>
-  
-PROJECTS
-Algorithmic & AI-Based Quantitative Trading System (Capstone) | Python, NumPy, Pandas, SciPy
-Integrated Machine Learning & Financial Engineering: Developed a comprehensive, simplified AI-based trading infrastructure over an iterative 8-project pipeline, marrying predictive machine learning models with algorithmic trading strategies.  
-Strategy Evaluation & AI Deployment: Engineered and compared a human-developed Intuition Rules-Based Manual Strategy against a Machine Learning Strategy Learner utilizing multi-indicator inputs to generate daily legal trade signals.  
-Reinforcement Learning (Q-Learning & Dyna-Q): Coded from scratch a model-free Q-Learning algorithm and extended it with a model-based Dyna-Q component featuring background planning steps to solve a simulation environment prior to portfolio deployment.  
-Technical Analysis & Signal Generation: Designed and evaluated 5 custom technical indicators (e.g., Bollinger Bands, RSI) and formulated a Theoretically Optimal Trading Strategy to map out the mathematical upper-performance bounds of the target portfolio.  
-Event-Driven Market Simulator: Built an optimized financial market simulator from scratch using Pandas to execute high-throughput programmatic trading order books, correctly calculating financial transactions while accounting for friction factors like commission costs and market impact.  
-Custom Machine Learning Decision Trees (CART): Programmed fully custom object-oriented regression tree learners—including a classic Decision Tree, Random Tree, Bootstrap Aggregating (Bag) Learner, and an ensemble "Insane Learner"—completely bypassing standard packages to enforce granular algorithmic control.  
-Adversarial Data Stress Testing: Designed algorithmic dataset generation scripts to create custom multi-dimensional data boundaries optimized to deliberately expose the respective architectural weaknesses of Linear Regression versus Decision Tree frameworks.  
-Portfolio Optimization Engine: Crafted a deterministic portfolio allocation optimization script leveraging scipy.optimize.minimize to maximize the Sharpe Ratio and output portfolio statistics (cumulative return, standard deviation, and average daily return).  
-Statistical Simulation Experiments: Constructed Monte Carlo probabilistic experiments modeling an American Roulette wheel to mathematically analyze risk and reward parameters using the Martingale betting system.
+    <!-- Sidebar Navigation & Contact -->
+    <aside>
+        <div class="profile">
+            <h1>Stephanie Zhang</h1>
+            <p>MS Computer Science Student</p>
+        </div>
+        <div class="contact-info">
+            <p>📧 <a href="mailto:stephmscs@gmail.com">stephmscs@gmail.com</a></p>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#objective">Objective</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#competencies">Core Competencies</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-Advanced Cognitive Science Synthesizing & Literature Review | Research Database Tools
-Systematic Literature Synthesis: Conducted an extensive, multi-source literature evaluation to investigate an interdisciplinary research question intersecting computer science and human cognition. 
-Source Optimization:: Established rigorous evaluation parameters to refine and select high-impact, credible scientific research, resolving contradictions and identifying core thematic patterns in existing literature
-Analytical Translation: Maintained a detailed 100+ hour research timeline tracking project milestones, culminating in a synthesized technical paper detailing real-world application contexts for cognitive theories.
+    <!-- Main Resume Content -->
+    <main>
+        
+        <section id="objective">
+            <h2>Objective</h2>
+            <p class="objective-text">
+                I am an MS Computer Science graduate student specializing in Artificial Intelligence and Machine Learning who also holds a BA in Classics (Latin & Ancient Greek). I am seeking the AI Tutor (standard Chinese and Chinese dialects) position at xAI to leverage native Mandarin proficiency and technical AI/ML expertise to curate high-quality audio datasets for Grok.
+            </p>
+        </section>
 
- Machine Learning for Cyber Threat Detection & Intrusion Detection Systems | Python, Scikit-Learn, Pandas, NumPy
-End-to-End ML Cyber Pipeline: Developed a modular data processing and classification engine to analyze cybersecurity network logs and metadata across real-world datasets (such as UNSW-NB15, CLAMP, and Phiusiil).
-Feature Engineering & Preprocessing: Implemented advanced data pipelines incorporating One-Hot Encoding for categorical network attributes, Min-Max Scaling for packet metrics, and Principal Component Analysis (PCA) for dimensional reduction.
-Supervised Anomaly Classification: Built, trained, and compared predictive security models using Gaussian Naive Bayes, Decision Trees, and Gradient Boosting Classifiers to accurately isolate malicious network payloads.
-Unsupervised Clustering Analyses: Applied K-Means Clustering optimized via the Yellowbrick K-Elbow Visualizer to dynamically determine appropriate cluster groupings and establish structural data patterns within unlabelled logs.
-Hyperparameter Optimization & Metrics Engineering: Designed a hyperparameter tuning matrix tracking core validation metrics including Accuracy, Recall, Precision, F1-Score, False Positive Rate (FPR), False Negative Rate (FNR), and ROC-AUC.
+        <section id="education">
+            <h2>Education & Certifications</h2>
+            
+            <div class="item-group">
+                <h3>MS Computer Science (Artificial Intelligence & Machine Learning)</h3>
+                <p class="sub-heading">Georgia Institute of Technology (GA) | GPA 4.0</p>
+            </div>
+            
+            <div class="item-group">
+                <h3>BA Classics (Latin and Ancient Greek)</h3>
+                <p class="sub-heading">University of California, Irvine (CA) | Summa Cum Laude | GPA 4.0</p>
+            </div>
 
+            <div class="item-group">
+                <h3>AS Computer Science & Mathematics & Physics</h3>
+                <p class="sub-heading">Orange Coast College & Golden West College (CA) | With Honors | GPA 4.0</p>
+            </div>
 
-  
+            <div class="item-group">
+                <h3>Selected Certifications</h3>
+                <ul>
+                    <li><strong>Machine Learning Specialization</strong> — Stanford University School of Engineering</li>
+                    <li><strong>Deep Learning Specialization</strong> — DeepLearning.AI</li>
+                    <li><strong>Computer Science Certificates (Java, C++)</strong> — Orange Coast College & College of San Mateo</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+
+            <div class="item-group">
+                <h3>Math / Sciences & Linguistics Teaching Assistant / Tutor</h3>
+                <p class="sub-heading">California Community Colleges | 2020 – Present</p>
+                <ul>
+                    <li>Taught classes and hosted office hours covering Data Structures & Algorithms (Java/C++), Discrete Math, Linear Algebra, Calculus I-IV, Physics, and Computer Architecture.</li>
+                    <li>Applied a comprehensive linguistic framework spanning English, Chinese, Latin, and Ancient Greek to break down language mechanics, translation methodologies, and structural syntax for diverse student groups.</li>
+                </ul>
+            </div>
+
+            <div class="item-group">
+                <h3>Course and Syllabus Design</h3>
+                <p class="sub-heading">College of San Mateo and Mission College</p>
+                <ul>
+                    <li>Designed and led successful approval of syllabi and course materials for Machine Learning and Artificial Intelligence courses.</li>
+                </ul>
+            </div>
+
+            <div class="item-group">
+                <h3>Legal Translator & Assistant (English / Chinese)</h3>
+                <p class="sub-heading">Howser & Brown (U.S.) & Beijing Legal Consulting (China)</p>
+                <ul>
+                    <li><strong>Legal Translation & Analysis:</strong> Translated complex legal contracts, case files, and audio testimony between U.S. and Beijing teams, ensuring zero loss of meaning across English and Mandarin Chinese.</li>
+                    <li><strong>Linguistic Quality Control:</strong> Transcribed and audited multi-dialect spoken evidence, exercising independent judgment to resolve linguistic ambiguities and regional accents with strict syntactic precision.</li>
+                </ul>
+            </div>
+
+            <div class="item-group">
+                <h3>Software Engineer</h3>
+                <p class="sub-heading">Linksys, Fidelity Information Services, and Aigo Research</p>
+                <ul>
+                    <li>Developed and deployed software systems involving international clients, managing multi-lingual communication and joint-venture data alignment across global partners.</li>
+                    <li>Managed large-scale data systems, ensuring data integrity, strict quality standards, and optimized processing workflows—skills directly transferable to AI audio annotation pipelines.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="competencies">
+            <h2>Core Competencies</h2>
+            <div class="competency-grid">
+                <div class="competency-card">
+                    <h4>Programming</h4>
+                    <p>Python, C/C++, Java, Assembly, C#, JavaScript, HTML, CSS, Matlab</p>
+                </div>
+                <div class="competency-card">
+                    <h4>Spoken Languages</h4>
+                    <p>English, Chinese (Mandarin and all Northern dialects), Latin, Ancient Greek</p>
+                </div>
+                <div class="competency-card">
+                    <h4>Linguistic Analysis</h4>
+                    <p>Expert structural analysis of syntax, phonology, and regional dialects.</p>
+                </div>
+                <div class="competency-card">
+                    <h4>Databases & Data</h4>
+                    <p>MySQL, Oracle, MongoDB, Redis, HBase, Spoken audio transcription, pipeline quality control.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+
+            <div class="item-group">
+                <h3>Algorithmic & AI-Based Quantitative Trading System (Capstone)</h3>
+                <p class="sub-heading">Python, NumPy, Pandas, SciPy</p>
+                <ul>
+                    <li><strong>Reinforcement Learning:</strong> Coded from scratch a model-free Q-Learning algorithm and extended it with a model-based Dyna-Q component featuring background planning steps.</li>
+                    <li><strong>Custom Machine Learning Decision Trees (CART):</strong> Programmed fully custom object-oriented regression tree learners (Decision Tree, Random Tree, Bag Learner) completely bypassing standard packages to enforce granular algorithmic control.</li>
+                    <li><strong>Event-Driven Market Simulator:</strong> Built an optimized financial market simulator from scratch using Pandas to execute high-throughput programmatic trading order books, correctly calculating friction factors.</li>
+                </ul>
+            </div>
+
+            <div class="item-group">
+                <h3>Machine Learning for Cyber Threat & Intrusion Detection Systems</h3>
+                <p class="sub-heading">Python, Scikit-Learn, Pandas, NumPy</p>
+                <ul>
+                    <li>Developed a modular data processing engine to analyze cybersecurity network logs across real-world datasets (UNSW-NB15, CLAMP).</li>
+                    <li>Implemented advanced pipelines using One-Hot Encoding, Min-Max Scaling, and Principal Component Analysis (PCA).</li>
+                    <li>Built predictive security models using Gaussian Naive Bayes, Decision Trees, Gradient Boosting, and unsupervised K-Means Clustering.</li>
+                </ul>
+            </div>
+
+            <div class="item-group">
+                <h3>Advanced Cognitive Science Synthesizing & Literature Review</h3>
+                <p class="sub-heading">Research Database Tools</p>
+                <ul>
+                    <li>Conducted an extensive literature evaluation to investigate an interdisciplinary research question intersecting computer science and human cognition.</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
