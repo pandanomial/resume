@@ -434,7 +434,21 @@
             </div>
 
 
+            <!-- Binary Exploitation & Reverse Engineering Project -->
+            <div class="item-group">
+                <h3>Binary Exploitation &amp; Reverse Engineering</h3>
+                <p class="sub-heading">Intel x86_64 Assembly, C, Python (pwntools), GDB (pwndbg), objdump, ropper</p>
+                <ul>
+                    <li><strong>Control Flow Hijacking:</strong> Designed and executed custom exploit scripts using <strong>Python (pwntools)</strong> to successfully hijack binary control flow across multiple progressive Capture-the-Flag (CTF) challenges.</li>
+                    <li><strong>Advanced ROP Chains &amp; Stack Pivoting:</strong> Automated the identification of runtime gadgets using <strong>ropper</strong> to bypass modern defensive mitigations (NX/DEP), constructing multi-stage Return-Oriented Programming (ROP) chains and stack pivots to relocate <code>RSP</code> into writable memory segments (<code>.bss</code>/<code>.data</code>).</li>
+                    <li><strong>Vulnerability Analysis:</strong> Audited C source code and disassembled binaries via <strong>objdump</strong> to identify, analyze, and exploit memory-unsafe vulnerabilities, including stack-based buffer overflows, integer overflows, type demotions, and Time-of-Check to Time-of-Use (<strong>TOCTOU</strong>) race conditions.</li>
+                    <li><strong>Shellcode Injection:</strong> Engineered custom x86_64 assembly payloads to execute raw machine code on-the-fly within active processes, evading "bad byte" constraints through alternative operation sequences.</li>
+                    <li><strong>Dynamic Debugging:</strong> Conducted deep-dive runtime analysis, register tracking, and stack-frame evaluation using <strong>GDB (pwndbg)</strong> to accurately calculate payload memory offsets and verify pointer integrity.</li>
+                </ul>
+            </div>
 
+
+           
            
            
         </section>
