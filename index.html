@@ -490,6 +490,19 @@
             </div>
 
 
+           <!-- database Project -->
+            <div class="item-group">
+                <h3>Database Security, Privacy &amp; Exploitation Analysis</h3>
+                <p class="sub-heading">SQL, MSSQL (T-SQL), DbGate, Advanced SQL Injection (SQLi), k-Anonymity, OSINT, Chrome DevTools</p>
+                <ul>
+                    <li><strong>Defensive Engineering &amp; SQLi Mitigation:</strong> Developed robust, server-side dynamic SQL defenses using <strong>sp_executesql</strong> and implemented specialized database stored procedures (<code>uspSQLReplace</code>) to safely sanitize raw inputs[cite: 2]. Successfully mitigated critical attack vectors, including <code>' OR 1=1</code> and <code>UNION SELECT</code> exploits, while preserving usability for valid datasets with special characters[cite: 2].</li>
+                    <li><strong>Data De-identification &amp; Privacy Compliance:</strong> Engineered complex database views to enforce strictly defined <strong>$k$-anonymity ($k=2$)</strong> data privacy compliance mandates[cite: 2]. Implemented age/duration bucket aggregation, targeted data redacting (using 'Redact' and 'Other'), and record omission logic to systematically prevent inference attacks on sensitive corporate data[cite: 2].</li>
+                    <li><strong>Privilege Escalation &amp; Schema Extraction:</strong> Conducted advanced web application penetration testing by injecting malicious payloads into application reports to escalate read-only privileges[cite: 4]. Leveraged native database properties to elevate a restricted <code>Schema</code> user's access, exposing hidden table metadata across the database environment[cite: 4].</li>
+                    <li><strong>Payload Interception &amp; Transaction Tampering:</strong> Bypassed front-end text constraints by utilizing <strong>Chrome Developer Tools</strong> to pause form transmissions and intercept raw JSON backend payloads[cite: 3]. Executed multi-stage SQL database manipulations to alter financial ledger histories, securely removing automated penalties while cleanly maintaining historical audit trail integrity[cite: 3].</li>
+                    <li><strong>Multi-Factor Bypass &amp; OSINT Integration:</strong> Executed chained attack methodologies combining <strong>Open-Source Intelligence (OSINT)</strong> collection with raw password bypass injections to clear initial authentication barriers and programmatically resolve complex downstream multi-factor authentication security questions[cite: 6].</li>
+                    <li><strong>Cross-Dataset Correlation &amp; Inference Auditing:</strong> Conducted comprehensive privacy audits by correlating independent, partially de-identified public datasets (voter registration, medical history, hospital logs, and enterprise rosters)[cite: 8, 9, 10]. Cross-referenced overlapping data points to reconstruct hidden fields—including exact employee salaries and sensitive medical histories—with 100% mathematical certainty[cite: 8, 9, 10].</li>
+                </ul>
+            </div>
            
            
            
