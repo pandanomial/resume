@@ -536,18 +536,22 @@
 
 
 
-        <!-- Malware Project -->
+        <!-- Malware Analysis Project -->
         <div class="item-group">
-            <h3>Malware Analysis &amp; Reverse Engineering</h3>
-            <p class="sub-heading">JoeSandbox, Wireshark, Python, Virtual Machine (VM), Static Analysis, Dynamic Analysis</p>
+            <h3>Malware Analysis &amp; Reverse Engineering; Threat Investigation</h3>
+            <p class="sub-heading">JoeSandbox, Wireshark, Python, Virtual Machine (VM), Static Analysis, Dynamic Analysis, Windows API, JSON, Network Analysis, Registry Analysis</p>
             <ul>
-                <li><strong>Behavioral Analysis:</strong> Conducted comprehensive behavioral profiling on five distinct malware samples using <strong>JoeSandbox</strong> to identify system-level indicators of compromise and malicious patterns.</li>
+                <li><strong>Behavioral Analysis:</strong> Investigated five Windows malware samples using detailed <strong>Joe Sandbox</strong> reports, analyzing process trees, execution timelines, API calls, registry activity, file-system changes, memory artifacts, and system interactions.</li>
                 <li><strong>Static Analysis:</strong> Executed code de-obfuscation and decoding techniques to reverse-engineer functionality from packed, encoded, and obfuscated scripts.</li>
                 <li><strong>Dynamic Analysis:</strong> Performed multi-stage dynamic analysis within a secure <strong>Virtual Machine</strong> environment to trace execution flow, monitor system component interactions, and isolate program behavior.</li>
-                <li><strong>Network Forensics:</strong> Investigated simulated command-and-control (C2) communication streams using <strong>Wireshark</strong> to analyze packet-level traffic and endpoint interactions.</li>
                 <li><strong>Tooling &amp; Automation:</strong> Developed custom HTTP request programs using <strong>Python</strong> to interact with C2 endpoints, successfully extracting flags and validating system-level configurations.</li>
+                <li><strong>Threat Classification:</strong> Evaluated 100 malware-behavior combinations across five samples and produced evidence-based classifications covering persistence, keylogging, clipboard access, payload dropping, process termination, defense evasion, device discovery, and sandbox-evasion techniques.</li>
+                <li><strong>Windows System Analysis:</strong> Traced <strong>Windows API</strong> calls and system-level activity to identify registry-key creation and deletion, autostart persistence, device enumeration, process manipulation, dropped executables, and interactions with Windows components.</li>
+                <li><strong>Network Investigation:</strong> Examined HTTP requests, DNS queries, destination IP addresses, domains, and request headers to detect suspicious outbound activity and potential command-and-control communication.</li>
+                <li><strong>Technical Documentation:</strong> Documented findings in a structured <strong>JSON</strong> format, identifying which process performed each behavior and recording the technical evidence supporting every classification.</li>
             </ul>
         </div>
+
            
         </section>
 
