@@ -393,6 +393,93 @@
        <section id="projects">
             <h2>Featured Projects</h2>
 
+
+            <!-- Project 3 -->
+            <div class="item-group">
+                <h3>Convolutional Neural Networks, ResNet & Imbalanced Learning System</h3>
+                <p class="sub-heading">Python, NumPy, PyTorch, CUDA, Google Colab, VS Code</p>
+                <ul>
+                    <li><strong>Convolutional Neural Network from Scratch:</strong> Built a complete CNN framework in NumPy, implementing convolution, ReLU, max pooling, fully connected layers, Softmax Cross-Entropy, and end-to-end forward and backward propagation without relying on automatic differentiation for core CNN operations.</li>
+            
+                    <li><strong>Custom Convolution Forward & Backward Pass:</strong> Implemented multi-channel 2D convolution with configurable stride, zero padding, multiple filters, and bias terms, including explicit analytical gradients for input, filter weights, and biases through dX, dW, and db.</li>
+            
+                    <li><strong>Backpropagation Through Spatial Operations:</strong> Implemented convolution backpropagation using both gradient scatter accumulation and the equivalent full-convolution interpretation with spatially flipped kernels, including stride expansion and removal of forward-pass padding during dX reconstruction.</li>
+
+                    <li><strong>Max Pooling Gradient Routing:</strong> Implemented max-pooling forward and backward propagation using window-based maximum selection, argmax index recovery, and gradient routing only through winning activations, with accumulation support for overlapping pooling regions.</li>
+            
+                    <li><strong>Custom Linear, ReLU & Loss Modules:</strong> Developed fully connected layers, ReLU activation, and Softmax Cross-Entropy modules with cached forward-pass state, analytical local derivatives, and chain-rule gradient propagation across arbitrary batch sizes.</li>
+            
+                    <li><strong>SGD with Momentum & L2 Regularization:</strong> Implemented a custom SGD optimizer supporting momentum-based velocity updates, configurable learning rates, and L2 regularization, including separate handling of weight and bias parameters and correct accumulation of batch-averaged gradients.</li>
+            
+                    <li><strong>Numerical Gradient & Unit-Test Validation:</strong> Verified convolution, pooling, linear-layer, activation, and optimizer behavior using unit tests, hand-derived gradient calculations, tensor-shape checks, and controlled numerical reasoning to validate correctness of forward and backward implementations.</li>
+            
+                    <li><strong>Custom ResNet-Style CIFAR-10 Architecture:</strong> Designed and trained a deep residual CNN with 19 convolutional layers and 9 residual blocks, progressing through 16, 32, and 64 feature channels while reducing spatial resolution from 32×32 to 16×16 to 8×8.</li>
+            
+                    <li><strong>Residual Connections & Downsampling:</strong> Implemented identity shortcuts for shape-preserving blocks and 1×1 stride-2 projection shortcuts for downsampling stages, ensuring channel and spatial-dimension compatibility before residual addition.</li>
+            
+                    <li><strong>Batch Normalization & Weight Initialization:</strong> Integrated Batch Normalization, ReLU activations, global average pooling, and Kaiming/He initialization to stabilize deep-network optimization and maintain appropriate activation scale throughout training.</li>
+
+                    <li><strong>High-Accuracy CIFAR-10 Classification:</strong> Achieved approximately 92.6% validation accuracy on CIFAR-10 using a custom ResNet-style model, demonstrating strong performance through architecture design, training-schedule tuning, and regularization control.</li>
+            
+                    <li><strong>Hyperparameter Optimization & Training Strategy:</strong> Conducted controlled experiments across learning rates [0.0001–0.40], warmup periods, momentum values, epoch budgets, learning-rate decay milestones, and L2 regularization strengths to study convergence speed, stability, and generalization.</li>
+            
+                    <li><strong>Learning-Rate Scheduling & Warmup:</strong> Designed a staged learning-rate schedule with warmup and milestone-based decay, using a final configuration with base learning rate 0.1, 4 warmup epochs, 150 total epochs, and decay milestones at epochs 100 and 130.</li>
+            
+                    <li><strong>Momentum Dynamics Analysis:</strong> Evaluated momentum values around 0.9 and analyzed the tradeoff between preserving previous update direction and remaining responsive to new gradients, selecting momentum 0.9 for stable and consistent optimization.</li>
+            
+                    <li><strong>Class-Balanced Focal Loss Implementation:</strong> Implemented Class-Balanced Focal Loss using the effective-number weighting formulation Wy=(1−β)/(1−β^ny) and focal term (1−pt)^γ to address both class-frequency imbalance and easy-versus-hard example imbalance.</li>
+            
+                    <li><strong>Focal-Loss Hyperparameter Study:</strong> Evaluated beta values [0.9999, 0.9995, 0.9990, 0.9950, 0.9900, 0.9000] and gamma values [0.1, 0.5, 1.0, 1.5, 2.0], showing that stronger class reweighting or harder-example focusing does not monotonically improve performance and must be tuned experimentally.</li>
+            
+                    <li><strong>Imbalanced Classification Analysis:</strong> Compared regular Cross-Entropy against Class-Balanced Focal Loss on imbalanced CIFAR-10 using per-class accuracy rather than aggregate accuracy alone, revealing meaningful differences in minority-class behavior that overall averages would hide.</li>
+
+                    <li><strong>Minority-Class Performance Improvement:</strong> With beta=0.9950 and gamma=1, improved Class 8 accuracy from 32.00% under Cross-Entropy to 42.10% and Class 9 from 37.20% to 41.20%, demonstrating the value of class-aware reweighting for difficult classes.</li>
+            
+                    <li><strong>Gamma Sensitivity & Hard-Example Focusing:</strong> Demonstrated that increasing gamma changes which examples dominate optimization; gamma=2 achieved approximately 65.63% mean per-class accuracy compared with 63.83% at gamma=1.5, while producing different class-specific tradeoffs across the dataset.</li>
+            
+                    <li><strong>Model Evaluation & Experimental Interpretation:</strong> Analyzed mean per-class accuracy, minority-class performance, optimization stability, and non-monotonic hyperparameter effects to justify model-selection decisions using machine-learning theory rather than relying only on raw accuracy.</li>
+            
+                    <li><strong>Final Tuned ResNet Configuration:</strong> Selected a final training setup using batch size 128, base learning rate 0.1, momentum 0.9, 4 warmup epochs, 150 total epochs, learning-rate milestones [100, 130], L2 regularization 0.0003, and Cross-Entropy loss for high-accuracy balanced CIFAR-10 classification.</li>
+                </ul>
+            </div>
+
+
+
+           
+
+            <!-- Project 2 -->
+            <div class="item-group">
+                <h3>Deep Learning Neural Network & Optimization System from Scratch</h3>
+                <p class="sub-heading">Python, NumPy, Jupyter Notebook, VS Code</p>
+                <ul>
+                    <li><strong>End-to-End Neural Network Implementation:</strong> Built a complete two-layer neural network and Softmax Regression pipeline from scratch in NumPy, implementing forward propagation, nonlinear activation functions, Softmax probability outputs, cross-entropy loss, and full analytical backpropagation without relying on high-level deep learning frameworks.</li>
+            
+                    <li><strong>Custom Backpropagation & Gradient Engineering:</strong> Derived and implemented gradients for all trainable model parameters across fully connected layers, including weight and bias updates, chain-rule propagation, activation derivatives, and matrix-based gradient flow through the network.</li>
+            
+                    <li><strong>Mini-Batch SGD Optimizer from Scratch:</strong> Developed a custom stochastic gradient descent optimization module supporting mini-batch training, configurable learning rates, and iterative parameter updates based on analytically computed gradients.</li>
+            
+                    <li><strong>L2 Regularization & Generalization Control:</strong> Implemented L2 weight regularization directly into the optimizer by augmenting weight gradients with the regularization term while explicitly excluding bias parameters, enabling controlled experimentation with underfitting, overfitting, and weight shrinkage behavior.</li>
+
+                    <li><strong>Hyperparameter Optimization & Experimental Design:</strong> Conducted systematic controlled experiments across learning rate, L2 regularization strength, and hidden-layer size while holding non-target variables fixed to isolate causal effects and evaluate optimization stability, convergence speed, and model capacity.</li>
+            
+                    <li><strong>Quantitative Model Improvement:</strong> Improved validation accuracy from 92.78% to 97.19%, a +4.42 percentage-point gain (approximately 4.76% relative improvement), while achieving 97.05% final test accuracy on MNIST through joint tuning of learning rate, regularization, and hidden-layer capacity.</li>
+            
+                    <li><strong>Optimization Stability Analysis:</strong> Analyzed the impact of learning-rate magnitude on SGD dynamics, demonstrating how larger update steps accelerate convergence but can increase oscillation, while smaller learning rates produce more stable yet significantly slower optimization within a fixed training budget.</li>
+            
+                    <li><strong>Bias–Variance & Regularization Analysis:</strong> Evaluated L2 coefficients across multiple orders of magnitude and empirically demonstrated the bias–variance tradeoff, showing that excessive regularization caused severe underfitting while weaker regularization improved model flexibility and predictive accuracy.</li>
+            
+                    <li><strong>Model Capacity & Representation Study:</strong> Increased hidden-layer width from the default architecture to 512 units to test representational capacity, improving validation performance while maintaining a small train-validation gap and avoiding clear evidence of harmful overfitting.</li>
+            
+                    <li><strong>Numerical Validation & Software Correctness:</strong> Verified model behavior using unit tests, gradient checks, controlled training experiments, and training/validation learning curves to ensure numerical correctness, stable optimization, and consistent generalization performance.</li>
+            
+                    <li><strong>Final Tuned Configuration:</strong> Identified a high-performing configuration using learning rate 0.75, L2 regularization coefficient 1e-5, hidden size 512, batch size 64, and 10 training epochs, balancing convergence speed, model capacity, and generalization.</li>
+                </ul>
+            </div>
+
+
+
+
+           
             <!-- Project 1 -->
             <div class="item-group">
                 <h3>Algorithmic & AI-Based Quantitative Trading System (Capstone)</h3>
