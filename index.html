@@ -442,54 +442,58 @@
 ```
 
 
+           ```html
             <!-- Project 3 -->
             <div class="item-group">
                 <h3>Convolutional Neural Networks, ResNet & Imbalanced Learning System</h3>
                 <p class="sub-heading">Python, NumPy, PyTorch, CUDA, Google Colab, VS Code</p>
                 <ul>
-                    <li><strong>Convolutional Neural Network from Scratch:</strong> Built a complete CNN framework in NumPy, implementing convolution, ReLU, max pooling, fully connected layers, Softmax Cross-Entropy, and end-to-end forward and backward propagation without relying on automatic differentiation for core CNN operations.</li>
             
-                    <li><strong>Custom Convolution Forward & Backward Pass:</strong> Implemented multi-channel 2D convolution with configurable stride, zero padding, multiple filters, and bias terms, including explicit analytical gradients for input, filter weights, and biases through dX, dW, and db.</li>
+                    <li><strong>Deep Learning Framework from Scratch:</strong> Engineered an end-to-end convolutional neural network framework in NumPy, implementing convolution, ReLU, max pooling, fully connected layers, Softmax Cross-Entropy, forward propagation, and analytical backpropagation without relying on PyTorch autograd for core operations.</li>
             
-                    <li><strong>Backpropagation Through Spatial Operations:</strong> Implemented convolution backpropagation using both gradient scatter accumulation and the equivalent full-convolution interpretation with spatially flipped kernels, including stride expansion and removal of forward-pass padding during dX reconstruction.</li>
-
-                    <li><strong>Max Pooling Gradient Routing:</strong> Implemented max-pooling forward and backward propagation using window-based maximum selection, argmax index recovery, and gradient routing only through winning activations, with accumulation support for overlapping pooling regions.</li>
+                    <li><strong>Multi-Channel Convolution Engine:</strong> Implemented configurable 2D convolution supporting arbitrary batch sizes, multiple input/output channels, learnable filters and biases, stride, zero padding, and spatial output-dimension computation across N×C×H×W tensors.</li>
             
-                    <li><strong>Custom Linear, ReLU & Loss Modules:</strong> Developed fully connected layers, ReLU activation, and Softmax Cross-Entropy modules with cached forward-pass state, analytical local derivatives, and chain-rule gradient propagation across arbitrary batch sizes.</li>
+                    <li><strong>Convolution Backpropagation & Gradient Derivation:</strong> Derived and implemented exact analytical gradients for convolutional inputs, kernels, and biases (dX, dW, db), including overlapping receptive-field accumulation, stride handling, padding removal, and spatially flipped-kernel interpretation of the backward convolution.</li>
             
-                    <li><strong>SGD with Momentum & L2 Regularization:</strong> Implemented a custom SGD optimizer supporting momentum-based velocity updates, configurable learning rates, and L2 regularization, including separate handling of weight and bias parameters and correct accumulation of batch-averaged gradients.</li>
+                    <li><strong>Max-Pooling Forward & Backward Propagation:</strong> Built max-pooling operations from first principles using sliding spatial windows, argmax index recovery, and precise gradient routing to winning activations, including correct gradient accumulation when pooling regions overlap.</li>
             
-                    <li><strong>Numerical Gradient & Unit-Test Validation:</strong> Verified convolution, pooling, linear-layer, activation, and optimizer behavior using unit tests, hand-derived gradient calculations, tensor-shape checks, and controlled numerical reasoning to validate correctness of forward and backward implementations.</li>
+                    <li><strong>Modular Neural Network Architecture:</strong> Developed reusable Linear, ReLU, convolution, pooling, and loss modules with cached forward-pass state and chain-rule gradient propagation, enabling layers to communicate upstream and downstream gradients through a complete training pipeline.</li>
             
-                    <li><strong>Custom ResNet-Style CIFAR-10 Architecture:</strong> Designed and trained a deep residual CNN with 19 convolutional layers and 9 residual blocks, progressing through 16, 32, and 64 feature channels while reducing spatial resolution from 32×32 to 16×16 to 8×8.</li>
+                    <li><strong>Custom Optimization System:</strong> Implemented SGD with momentum and L2 weight regularization from scratch, including velocity-based parameter updates, gradient regularization, learning-rate control, and separate handling of trainable weight and bias parameters.</li>
             
-                    <li><strong>Residual Connections & Downsampling:</strong> Implemented identity shortcuts for shape-preserving blocks and 1×1 stride-2 projection shortcuts for downsampling stages, ensuring channel and spatial-dimension compatibility before residual addition.</li>
+                    <li><strong>Numerical Correctness & Gradient Validation:</strong> Validated low-level neural-network components with unit tests, analytical gradient derivations, tensor-shape verification, controlled numerical examples, and forward/backward consistency checks to ensure reliable gradient flow throughout the model.</li>
             
-                    <li><strong>Batch Normalization & Weight Initialization:</strong> Integrated Batch Normalization, ReLU activations, global average pooling, and Kaiming/He initialization to stabilize deep-network optimization and maintain appropriate activation scale throughout training.</li>
-
-                    <li><strong>High-Accuracy CIFAR-10 Classification:</strong> Achieved approximately 92.6% validation accuracy on CIFAR-10 using a custom ResNet-style model, demonstrating strong performance through architecture design, training-schedule tuning, and regularization control.</li>
+                    <li><strong>Custom Deep Residual Network:</strong> Designed and trained a ResNet-style image classifier with 19 convolutional layers and 9 residual blocks, organizing feature extraction across 16-, 32-, and 64-channel stages while reducing spatial resolution from 32×32 to 16×16 to 8×8.</li>
             
-                    <li><strong>Hyperparameter Optimization & Training Strategy:</strong> Conducted controlled experiments across learning rates [0.0001–0.40], warmup periods, momentum values, epoch budgets, learning-rate decay milestones, and L2 regularization strengths to study convergence speed, stability, and generalization.</li>
+                    <li><strong>Residual Learning & Projection Shortcuts:</strong> Implemented identity skip connections for dimension-preserving residual blocks and 1×1 stride-2 projection shortcuts for channel expansion and spatial downsampling, enabling stable optimization of a substantially deeper CNN.</li>
             
-                    <li><strong>Learning-Rate Scheduling & Warmup:</strong> Designed a staged learning-rate schedule with warmup and milestone-based decay, using a final configuration with base learning rate 0.1, 4 warmup epochs, 150 total epochs, and decay milestones at epochs 100 and 130.</li>
+                    <li><strong>Modern CNN Training Techniques:</strong> Integrated Batch Normalization, ReLU nonlinearities, global average pooling, Kaiming/He weight initialization, and staged feature-map downsampling to improve training stability, gradient flow, and feature representation.</li>
             
-                    <li><strong>Momentum Dynamics Analysis:</strong> Evaluated momentum values around 0.9 and analyzed the tradeoff between preserving previous update direction and remaining responsive to new gradients, selecting momentum 0.9 for stable and consistent optimization.</li>
+                    <li><strong>High-Performance CIFAR-10 Classification:</strong> Achieved approximately 92.6% validation accuracy on CIFAR-10 with a custom-built ResNet-style architecture through coordinated architecture design, optimization tuning, learning-rate scheduling, and regularization control.</li>
             
-                    <li><strong>Class-Balanced Focal Loss Implementation:</strong> Implemented Class-Balanced Focal Loss using the effective-number weighting formulation Wy=(1−β)/(1−β^ny) and focal term (1−pt)^γ to address both class-frequency imbalance and easy-versus-hard example imbalance.</li>
+                    <li><strong>Large-Scale Hyperparameter Optimization:</strong> Conducted controlled experiments across learning rates from 0.0001 to 0.40, momentum values, warmup durations, epoch budgets from 10 to 200, learning-rate milestones, and L2 regularization strengths to evaluate convergence speed, stability, and generalization.</li>
             
-                    <li><strong>Focal-Loss Hyperparameter Study:</strong> Evaluated beta values [0.9999, 0.9995, 0.9990, 0.9950, 0.9900, 0.9000] and gamma values [0.1, 0.5, 1.0, 1.5, 2.0], showing that stronger class reweighting or harder-example focusing does not monotonically improve performance and must be tuned experimentally.</li>
+                    <li><strong>Learning-Rate Scheduling & Warmup Strategy:</strong> Tuned multi-stage optimization schedules combining linear warmup with milestone-based learning-rate decay; selected a final schedule using base learning rate 0.1, 4 warmup epochs, and decay milestones at epochs 100 and 130 over 150 training epochs.</li>
             
-                    <li><strong>Imbalanced Classification Analysis:</strong> Compared regular Cross-Entropy against Class-Balanced Focal Loss on imbalanced CIFAR-10 using per-class accuracy rather than aggregate accuracy alone, revealing meaningful differences in minority-class behavior that overall averages would hide.</li>
-
-                    <li><strong>Minority-Class Performance Improvement:</strong> With beta=0.9950 and gamma=1, improved Class 8 accuracy from 32.00% under Cross-Entropy to 42.10% and Class 9 from 37.20% to 41.20%, demonstrating the value of class-aware reweighting for difficult classes.</li>
+                    <li><strong>Optimization Dynamics Analysis:</strong> Evaluated the effects of momentum, learning-rate magnitude, regularization, and training duration on convergence behavior, identifying tradeoffs between fast optimization, oscillation, parameter stability, underfitting, and generalization.</li>
             
-                    <li><strong>Gamma Sensitivity & Hard-Example Focusing:</strong> Demonstrated that increasing gamma changes which examples dominate optimization; gamma=2 achieved approximately 65.63% mean per-class accuracy compared with 63.83% at gamma=1.5, while producing different class-specific tradeoffs across the dataset.</li>
+                    <li><strong>Class-Balanced Focal Loss from First Principles:</strong> Implemented Class-Balanced Focal Loss using effective-number class weighting W<sub>y</sub>=(1−β)/(1−β<sup>n<sub>y</sub></sup>) and focal weighting (1−p<sub>t</sub>)<sup>γ</sup>, enabling independent control of class-frequency imbalance and hard-example emphasis.</li>
             
-                    <li><strong>Model Evaluation & Experimental Interpretation:</strong> Analyzed mean per-class accuracy, minority-class performance, optimization stability, and non-monotonic hyperparameter effects to justify model-selection decisions using machine-learning theory rather than relying only on raw accuracy.</li>
+                    <li><strong>Imbalanced Learning Research & Experimentation:</strong> Benchmarked standard Cross-Entropy against Class-Balanced Focal Loss on imbalanced CIFAR-10, using per-class accuracy and mean per-class accuracy to expose minority-class behavior that aggregate accuracy alone could conceal.</li>
             
-                    <li><strong>Final Tuned ResNet Configuration:</strong> Selected a final training setup using batch size 128, base learning rate 0.1, momentum 0.9, 4 warmup epochs, 150 total epochs, learning-rate milestones [100, 130], L2 regularization 0.0003, and Cross-Entropy loss for high-accuracy balanced CIFAR-10 classification.</li>
+                    <li><strong>Focal-Loss Hyperparameter Study:</strong> Systematically evaluated β values [0.9999, 0.9995, 0.9990, 0.9950, 0.9900, 0.9000] and γ values [0.1, 0.5, 1.0, 1.5, 2.0], demonstrating experimentally that stronger class reweighting and hard-example focusing produce non-monotonic performance and must be tuned jointly.</li>
+            
+                    <li><strong>Minority-Class Accuracy Improvement:</strong> With β=0.9950 and γ=1, increased Class 8 accuracy from 32.00% under Cross-Entropy to 42.10% (+10.10 percentage points) and Class 9 accuracy from 37.20% to 41.20% (+4.00 points), demonstrating meaningful gains on difficult minority classes.</li>
+            
+                    <li><strong>Hard-Example Focusing Analysis:</strong> Demonstrated how γ changes the distribution of gradient emphasis across easy and difficult samples; γ=2 achieved approximately 65.63% mean per-class accuracy versus 63.83% at γ=1.5 while producing distinct class-level tradeoffs.</li>
+            
+                    <li><strong>Data-Driven Model Selection:</strong> Evaluated models using validation accuracy, mean per-class accuracy, class-specific performance, loss behavior, optimization stability, and hyperparameter sensitivity rather than relying on a single aggregate metric.</li>
+            
+                    <li><strong>Final Tuned Training Pipeline:</strong> Selected a high-performing configuration using batch size 128, base learning rate 0.1, momentum 0.9, 4-epoch warmup, 150 total epochs, milestone decays at epochs 100 and 130, L2 regularization 0.0003, and Cross-Entropy loss.</li>
+            
                 </ul>
             </div>
+```
 
 
 
