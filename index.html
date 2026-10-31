@@ -395,55 +395,50 @@
 
 
 
-        <!-- Project: Neural Machine Translation -->
-            ```html
+       ```html
             <!-- Project: Neural Machine Translation -->
             <div class="item-group">
-                <h3>Neural Machine Translation, Seq2Seq Attention & Transformer Systems</h3>
+                <h3>Neural Machine Translation, Seq2Seq Attention & Transformer Architectures</h3>
                 <p class="sub-heading">Python, NumPy, PyTorch, NLP, RNN, LSTM, Attention, Transformers, Jupyter, VS Code</p>
-            
                 <ul>
-                    <li><strong>End-to-End Neural Machine Translation System:</strong> Built and benchmarked German-to-English translation pipelines spanning vanilla RNNs, LSTMs, attention-based Seq2Seq models, a custom Transformer encoder, and a full encoder-decoder Transformer, enabling direct comparison between recurrent and attention-driven sequence modeling approaches.</li>
             
-                    <li><strong>LSTM from Scratch:</strong> Implemented a complete Long Short-Term Memory unit using explicit learnable parameters and nonlinear activations, constructing input, forget, candidate, and output gates together with hidden-state and cell-state updates to model long-range dependencies in sequential data.</li>
+                    <li><strong>End-to-End Neural Machine Translation:</strong> Built and benchmarked German-to-English translation systems spanning vanilla RNNs, LSTMs, attention-based Seq2Seq models, a custom Transformer encoder, and a full encoder-decoder Transformer, enabling direct comparison between recurrent and attention-based sequence modeling approaches.</li>
             
-                    <li><strong>Seq2Seq Encoder-Decoder Engineering:</strong> Developed recurrent encoder-decoder translation architectures with learned token embeddings, hidden/cell-state propagation, autoregressive target generation, vocabulary-level prediction, and both vanilla RNN and LSTM recurrent backbones.</li>
+                    <li><strong>LSTM from First Principles:</strong> Implemented a complete LSTM cell using explicit learnable parameters and nonlinear activations, constructing input, forget, candidate, and output gates together with hidden-state and cell-state updates to model long-range sequential dependencies.</li>
             
-                    <li><strong>Custom Attention Mechanism:</strong> Implemented cosine-similarity attention that compares each decoder hidden state against all encoder outputs, normalizes relevance scores with Softmax, and dynamically constructs a weighted context vector at every decoding step to improve source-target alignment.</li>
+                    <li><strong>Seq2Seq Encoder-Decoder Engineering:</strong> Developed recurrent encoder-decoder translation pipelines with learned token embeddings, hidden/cell-state propagation, autoregressive decoding, vocabulary-level prediction, and both RNN and LSTM recurrent backbones.</li>
             
-                    <li><strong>Attention-Driven Performance Gain:</strong> Demonstrated the impact of attention by reducing vanilla RNN validation perplexity from <strong>109.83 to 30.88</strong>, an approximately <strong>71.9% reduction</strong>, showing the benefit of direct weighted access to encoder representations over reliance on recurrent state propagation alone.</li>
+                    <li><strong>Custom Attention Mechanism:</strong> Implemented cosine-similarity attention that scores each decoder hidden state against all encoder outputs, normalizes relevance with Softmax, and constructs a new weighted context vector at every decoding step for dynamic source-target alignment.</li>
             
-                    <li><strong>Seq2Seq Architecture Benchmarking:</strong> Evaluated RNN, LSTM, RNN-with-Attention, and LSTM-with-Attention models under controlled default settings using training/validation loss and perplexity, identifying LSTM-with-Attention as the strongest recurrent architecture before tuning.</li>
+                    <li><strong>Attention Performance Improvement:</strong> Demonstrated the impact of attention by reducing vanilla-RNN validation perplexity from <strong>109.83 to 30.88</strong>, a <strong>71.9% reduction</strong>, showing the value of direct weighted access to encoder representations during decoding.</li>
             
-                    <li><strong>Seq2Seq Hyperparameter Optimization:</strong> Conducted controlled experiments across embedding dimension, hidden dimension, dropout, learning rate, and batch size; increased embedding and hidden dimensions from 128 to 256 and improved LSTM-with-Attention validation perplexity from <strong>27.14 to 22.61</strong>, approximately a <strong>16.7% improvement</strong>.</li>
+                    <li><strong>Recurrent Architecture Benchmarking:</strong> Evaluated RNN, LSTM, RNN-with-Attention, and LSTM-with-Attention models under controlled settings using training/validation loss and perplexity, analyzing the effects of recurrent gating, information bottlenecks, and attention on translation quality.</li>
             
-                    <li><strong>Model-Capacity & Regularization Analysis:</strong> Quantified the effect of increasing LSTM embedding and hidden dimensions, evaluated learning-rate and dropout alternatives, and used validation behavior rather than training loss alone to balance representational capacity, regularization, and generalization.</li>
+                    <li><strong>Seq2Seq Hyperparameter Optimization:</strong> Tuned embedding dimension, hidden-state size, dropout, learning rate, and batch size, improving the strongest LSTM-with-Attention model from <strong>27.14 to 22.61 validation perplexity</strong> while balancing model capacity and regularization.</li>
             
-                    <li><strong>Transformer Encoder from Scratch:</strong> Implemented a custom Transformer encoder including learned token and positional embeddings, query/key/value projections, scaled dot-product attention, multi-head self-attention, head concatenation and projection, residual connections, LayerNorm, position-wise feedforward layers, and final vocabulary projection.</li>
+                    <li><strong>Transformer Encoder Implementation:</strong> Built a custom Transformer encoder with learned token and positional embeddings, query/key/value projections, scaled dot-product attention, multi-head self-attention, residual connections, LayerNorm, position-wise feedforward layers, and target-vocabulary projection.</li>
             
-                    <li><strong>Multi-Head Attention Engineering:</strong> Built parallel attention heads using QK<sup>T</sup>/√d<sub>k</sub> scaling, Softmax-normalized attention distributions, weighted value aggregation, head concatenation, and learned output projection to capture multiple token relationships simultaneously.</li>
+                    <li><strong>Multi-Head Attention Engineering:</strong> Implemented parallel attention heads using scaled QK<sup>T</sup>/√d<sub>k</sub> similarity, Softmax attention distributions, weighted value aggregation, head concatenation, and learned output projection to capture multiple token relationships simultaneously.</li>
             
-                    <li><strong>Full Encoder-Decoder Transformer:</strong> Built a complete translation model using PyTorch's Transformer architecture with independent source/target embeddings and positional representations, multi-layer encoder and decoder stacks, masked decoder self-attention, encoder-decoder cross-attention, and target-vocabulary projection.</li>
+                    <li><strong>Full Encoder-Decoder Transformer:</strong> Developed a complete translation model using PyTorch's Transformer architecture with independent source/target embeddings, learned positional representations, multi-layer encoder and decoder stacks, causal masking, and target-vocabulary prediction.</li>
             
-                    <li><strong>Masked Self-Attention & Cross-Attention:</strong> Applied causal masking to prevent decoder access to future target tokens and used decoder queries with encoder keys/values to retrieve relevant source information during generation, enabling joint modeling of target-side context and source-target alignment.</li>
+                    <li><strong>Masked Self-Attention & Cross-Attention:</strong> Applied causal masking so target positions could use prior target context without accessing future tokens, and used encoder-decoder cross-attention to allow target-side queries to retrieve relevant information from the complete source sequence.</li>
             
-                    <li><strong>Transformer Hyperparameter Optimization:</strong> Tuned hidden dimension, attention-head count, feedforward width, dropout, and learning rate; expanded the model to <strong>d_model=256</strong> with <strong>4 attention heads</strong>, reduced the feedforward dimension to 1024, and selected a learning rate of 0.0005 based on validation performance.</li>
+                    <li><strong>Transformer Hyperparameter Optimization:</strong> Conducted controlled experiments across model dimension, attention-head count, feedforward width, dropout, and learning rate, selecting configurations based on validation behavior rather than training performance alone.</li>
             
-                    <li><strong>Architecture & Parameter Tradeoff Analysis:</strong> Analyzed how doubling d_model increases attention-projection capacity while reducing d_ff from 2048 to 1024 keeps the primary feedforward weight count approximately constant, allowing greater attention capacity without proportionally expanding the feedforward sublayers.</li>
+                    <li><strong>High-Performance Transformer Translation:</strong> Tuned the full Transformer to <strong>5.41 validation perplexity</strong>, achieving approximately <strong>76.1% lower validation perplexity</strong> than the best LSTM-with-Attention Seq2Seq model and demonstrating the effectiveness of self-attention-based sequence modeling.</li>
             
-                    <li><strong>Optimized Full Transformer Performance:</strong> Achieved <strong>1.688 validation loss</strong> and <strong>5.41 validation perplexity</strong>, improving the default Full Transformer from 5.90 perplexity and outperforming the best tuned LSTM-with-Attention Seq2Seq model by approximately <strong>76.1% in validation perplexity</strong>.</li>
+                    <li><strong>Seq2Seq vs. Transformer Architecture Analysis:</strong> Analyzed recurrent hidden-state paths versus direct self-attention interactions, explaining how shorter information paths, masked target self-attention, cross-attention, and parallel attention heads improve modeling of long-range source and target dependencies.</li>
             
-                    <li><strong>Encoder-Only vs. Full Transformer Analysis:</strong> Compared the custom Encoder Only Transformer with the tuned Full Transformer, reducing validation perplexity from <strong>22.59 to 5.41</strong> and analyzing the impact of decoder masked self-attention, encoder-decoder cross-attention, architectural depth, and hyperparameter tuning.</li>
+                    <li><strong>Translation Quality & Failure-Mode Analysis:</strong> Performed sentence-level qualitative evaluation across architectures, examining semantic preservation, fluency, missing information, incorrect substitutions, generic-token repetition, and Transformer word duplication in addition to aggregate loss and perplexity.</li>
             
-                    <li><strong>Seq2Seq vs. Transformer Comparative Study:</strong> Demonstrated that the tuned Full Transformer reduced validation loss from <strong>3.118 to 1.688</strong> and validation perplexity from <strong>22.61 to 5.41</strong> relative to the best Seq2Seq model, while analyzing recurrent information paths versus direct self-attention-based interactions for long-range dependency modeling.</li>
+                    <li><strong>Quantitative Model Evaluation:</strong> Used cross-entropy loss, perplexity, relative performance improvements, and learning curves to evaluate model behavior and connect changes in optimization objectives to practical translation quality.</li>
             
-                    <li><strong>Translation Quality & Failure-Mode Analysis:</strong> Performed sentence-level qualitative evaluation across architectures, assessing semantic preservation, fluency, missing information, incorrect substitutions, generic-token repetition, and Transformer word duplication rather than relying solely on aggregate perplexity.</li>
+                    <li><strong>Model Validation & Experimental Reliability:</strong> Verified LSTM, attention, Seq2Seq, and Transformer implementations through unit tests, tensor-shape validation, numerical checks, controlled training runs, saved checkpoints, and reproducible experiment comparisons before selecting final models.</li>
             
-                    <li><strong>Quantitative Model Evaluation:</strong> Used cross-entropy loss and perplexity to evaluate model quality, analyzed the exponential relationship between loss and perplexity, and calculated relative improvements across default and tuned models to support evidence-based architecture selection.</li>
-            
-                    <li><strong>Model Verification & Experimental Reliability:</strong> Validated LSTM, attention, Seq2Seq, and Transformer implementations through unit tests, tensor-shape verification, controlled numerical checks, learning-curve analysis, reproducible training runs, and saved model checkpoints before final model comparison.</li>
                 </ul>
             </div>
+            ```
 ```
 
 
