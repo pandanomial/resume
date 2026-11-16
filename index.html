@@ -395,6 +395,65 @@
 
 
 
+
+
+            <!-- =========================================================
+                 PROJECT: Generative AI — VAE, GAN, DDPM
+                 ========================================================= -->
+            <div class="item-group">
+                <h3>Generative AI, Variational Autoencoders, GANs & Diffusion Models</h3>
+                <p class="sub-heading">Python, NumPy, PyTorch, CUDA, Google Colab, Optuna, VAE, GAN, DDPM, U-Net, FID, VS Code</p>
+                <ul>
+            
+                    <li><strong>Multi-Architecture Generative AI Framework:</strong> Implemented, trained, tuned, and evaluated three major generative modeling architectures—Variational Autoencoders (VAEs), Generative Adversarial Networks (GANs), and Denoising Diffusion Probabilistic Models (DDPMs)—on MNIST and Fashion-MNIST, comparing image fidelity, sample diversity, latent-space quality, and computational efficiency.</li>
+            
+                    <li><strong>Variational Autoencoder from First Principles:</strong> Implemented probabilistic encoder-decoder components using fully connected neural networks, including shared encoder feature extraction, independent mean and log-variance prediction heads, stochastic latent sampling, and reconstruction through a learned decoder.</li>
+            
+                    <li><strong>Reparameterization & Differentiable Sampling:</strong> Implemented the reparameterization trick to transform Gaussian noise into latent samples using learned posterior means and standard deviations, enabling gradient-based optimization through stochastic latent representations.</li>
+            
+                    <li><strong>VAE Loss Function Engineering:</strong> Implemented and analyzed L1 and L2 reconstruction losses together with closed-form KL-divergence regularization, investigating how reconstruction objectives and KL weighting affect image sharpness, representation quality, and sample generation.</li>
+            
+                    <li><strong>Latent Representation Learning:</strong> Investigated the effects of latent dimensionality, KL regularization, posterior means, posterior variance, and Gaussian sampling on the geometry and discriminative quality of learned latent representations.</li>
+            
+                    <li><strong>Few-Shot KNN Classification:</strong> Evaluated VAE encoder representations using 10-shot, 1-nearest-neighbor classification on MNIST, achieving <strong>76.42% mean accuracy</strong> across sampled-latent evaluations with a tuned 8-dimensional latent representation.</li>
+            
+                    <li><strong>Representation vs. Generation Trade-Off:</strong> Demonstrated that a classification-optimized VAE could achieve substantially higher sampled-latent KNN accuracy than a generation-focused VAE (<strong>76.42% versus 15.30%</strong>), despite producing lower-quality generated images; analyzed the trade-off between discriminative representations and prior-sampled generation.</li>
+            
+                    <li><strong>Posterior Sampling Analysis:</strong> Compared classification using encoder posterior means and sampled latent vectors, identifying how posterior variance can disrupt nearest-neighbor relationships even when class-relevant information remains present in the encoder's mean representations.</li>
+            
+                    <li><strong>Generative Adversarial Network Engineering:</strong> Implemented and trained generator-discriminator architectures with configurable fully connected layers, ReLU/LeakyReLU activations, latent dimensions, learning rates, and optimization strategies.</li>
+            
+                    <li><strong>GAN Failure-Mode Investigation:</strong> Experimentally reproduced mode collapse on MNIST, analyzing limited output diversity, incomplete coverage of the target distribution, and the effects of adversarial optimization, batch size, learning rate, and latent dimensionality.</li>
+            
+                    <li><strong>DDPM Forward Diffusion:</strong> Implemented Gaussian noise schedules, alpha coefficients, cumulative alpha products, random timestep sampling, and closed-form forward diffusion to construct noisy training images at varying noise levels.</li>
+            
+                    <li><strong>DDPM Reverse Diffusion:</strong> Implemented timestep-conditioned reverse diffusion using neural noise prediction, analytical denoising coefficients, stochastic Gaussian sampling, and iterative reconstruction from random noise.</li>
+            
+                    <li><strong>Convolutional U-Net Architecture:</strong> Worked with a timestep-conditioned U-Net featuring convolutional residual blocks, GroupNorm, SiLU activations, hierarchical downsampling, transposed-convolution upsampling, skip connections, and noise-prediction outputs.</li>
+            
+                    <li><strong>Diffusion Training & Optimization:</strong> Developed and evaluated DDPM training workflows using randomly sampled timesteps, mean-squared noise-prediction loss, backpropagation, AdamW optimization, and configurable noise schedules and sampling steps.</li>
+            
+                    <li><strong>Automated Hyperparameter Optimization:</strong> Conducted extensive model searches using Optuna and controlled experiments across learning rates, regularization coefficients, batch sizes, latent dimensions, hidden dimensions, activation functions, training epochs, and diffusion schedules.</li>
+            
+                    <li><strong>Generative Image Quality Evaluation:</strong> Built evaluation workflows that generate 2,000 images per experiment and calculate Fréchet Inception Distance against provided Fashion-MNIST reference statistics, supplementing numerical evaluation with qualitative sample inspection.</li>
+            
+                    <li><strong>Fashion-MNIST Generative Benchmarking:</strong> Achieved a <strong>DDPM FID of 42.69</strong>, compared with <strong>56.08 for VAE</strong> and <strong>108.67 for GAN</strong> in selected experiments, demonstrating the effectiveness of convolutional denoising and iterative sampling under the evaluated configurations.</li>
+            
+                    <li><strong>Experiment Management & Reproducibility:</strong> Built reusable Jupyter and Colab workflows for isolated experiment configurations, checkpoint preservation, training logs, automated image generation, FID evaluation, performance comparisons, and systematic model selection without overwriting previous results.</li>
+            
+                    <li><strong>Generative Architecture Analysis:</strong> Compared probabilistic encoder-decoder learning, adversarial optimization, and diffusion-based denoising, identifying trade-offs involving reconstruction fidelity, sample diversity, mode collapse, latent representation quality, training stability, and inference complexity.</li>
+            
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+           
        
             <!-- Project: Neural Machine Translation -->
             <div class="item-group">
